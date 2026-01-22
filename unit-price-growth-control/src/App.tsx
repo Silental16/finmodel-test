@@ -229,7 +229,6 @@ function App() {
       ctx.stroke()
       ctx.setLineDash([])
 
-      const completionYearValue = CURRENT_YEAR + completionYearIndex
       const isAlreadyShown = (completionYearIndex % 5 === 0)
       if (!isAlreadyShown) {
         ctx.fillStyle = '#dc3545'
@@ -363,8 +362,6 @@ function App() {
         <div style="margin: 4px 0; color: #555;">Стоимость: $${currentPrice.toLocaleString('en-US', {minimumFractionDigits: 0, maximumFractionDigits: 0})}</div>
         <div style="margin-top: 8px; font-size: 11px; color: #888; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 6px;">↑↓ переместить | ←→ выбрать | Shift+↑↓ ±5%</div>
       `
-      const x = yearToX(selectedPointIndex)
-      const y = percentToY(growthData[selectedPointIndex])
       tooltipRef.current.style.left = '10px'
       tooltipRef.current.style.top = '10px'
       tooltipRef.current.style.opacity = '1'
@@ -405,7 +402,6 @@ function App() {
   const handleMouseMove = (e: React.MouseEvent<HTMLCanvasElement>) => {
     if (!canvasRef.current) return
     const rect = canvasRef.current.getBoundingClientRect()
-    const x = e.clientX - rect.left
     const y = e.clientY - rect.top
     
     if (isDraggingRef.current) {
