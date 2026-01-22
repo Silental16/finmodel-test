@@ -1,0 +1,12 @@
+{
+  "name": "unit-price-growth-control",
+  "version": "1.0.0",
+  "description": "Interactive unit price growth control chart",
+  "scripts": {
+    "dev": "npx serve .",
+    "build": "echo 'No build step needed for static site'"
+  },
+  "keywords": ["chart", "price", "growth"],
+  "author": "",
+  "license": "MIT"
+}
